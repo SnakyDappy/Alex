@@ -7,7 +7,6 @@ import Slider from './components/Slider';
 import About from './components/About';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
-import NeonTubes from './components/neontubes';
 
 function App() {
   return (
