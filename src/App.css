@@ -117,14 +117,14 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: auto; /* No forced height */
-  height: auto; /* Ensures it only takes necessary space */
+  min-height: auto;
+  height: auto;
   padding: 20px 0;
 }
 
 /* Responsive Video */
 .responsive-video {
-  max-width: 90%;
+  max-width: 80%; /* Adjust this percentage to control width */
   height: auto;
   max-height: 500px;
   border-radius: 10px;
@@ -132,12 +132,12 @@ body::after {
 
 /* Mobile Adjustments */
 @media (max-width: 600px) {
-  .center-container {
-    padding: 10px 0; /* Reduces vertical spacing */
+  .center-containervideo {
+    padding: 10px 0;
   }
 
   .responsive-video {
-    max-width: 100%;
+    max-width: 90%; /* A little wider on small screens */
     max-height: 300px;
   }
 }
