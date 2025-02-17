@@ -2,7 +2,7 @@ import React from 'react';
 import Photo1 from '../photos/photo (4).jpeg';
 import Photo2 from '../photos/photo (5).jpeg';
 import Photo3 from '../photos/photo (6).jpeg';
-import Photo4 from '../photos/vertical (1).jpeg';
+import Photo4 from '../photos/vertical (4).jpeg';
 
 
 function Gallery() {
