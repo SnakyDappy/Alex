@@ -1,0 +1,707 @@
+
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-size: 100% auto;
+  background-image: url("./photos/caramizi.jpg");
+  overflow-x: hidden;
+  position: relative;
+}
+
+.background {
+  background-color: transparent;
+}
+
+
+body::before {
+  top: 10%;  /* Adjust the top position for the first line */
+}
+
+body::after {
+  top: 30%;  /* Adjust the top position for the second line */
+}
+
+/*Header*/
+/* Container for SVG and text */
+.header-content {
+  display: flex;
+  align-items: center; /* Vertically center SVG and text */
+  justify-content: center; /* Horizontally center the SVG and text */
+  white-space: nowrap; /* Prevent wrapping by default */
+}
+
+/* The icon's style */
+.header-icon {
+  margin-right: 10px; /* Space between SVG and text */
+  width: 4rem;  /* Size of the SVG */
+  height: 4rem; /* Maintain aspect ratio */
+  fill: #fff; /* Icon color */
+}
+
+/* Main text styling */
+.mare {
+  font-size: 5rem;
+  will-change: transform; /* Optimizes performance */
+  white-space: nowrap; /* Prevent text from wrapping by default */
+}
+
+.noulcentru {
+  margin-left: 1%;
+}
+
+.neonText {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #f09,
+    0 0 20px #f09,
+    0 0 40px rgba(255, 0, 153, 0.5); /* Reduced large glow */
+  will-change: transform; /* Prevents layout recalculations */
+}
+
+.neonGold {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #ffd700,
+    0 0 20px #ffd700,
+    0 0 40px rgba(255, 215, 0, 0.5); /* Reduced large glow */
+  will-change: transform;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .mare {
+    font-size: 4rem; /* Slightly reduce font size */
+    white-space: normal; /* Allow wrapping on medium screens */
+  }
+
+  .header-icon {
+    width: 3.5rem; /* Slightly smaller SVG on medium screens */
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mare {
+    font-size: 3rem; /* Further reduce font size on small screens */
+    white-space: normal; /* Allow wrapping on smaller screens */
+  }
+
+  .header-icon {
+    width: 3rem; /* Further reduce SVG size */
+    height: 3rem;
+  }
+}
+
+
+/* Centering */
+.center {
+  text-align: center;
+  font-weight: 400;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensures full viewport height */
+  min-height: 100vh; /* Prevents shrinking */
+  overflow: hidden; /* Prevents layout shifts */
+}
+
+/*mainvideo*/
+/* Center Container (For Video) */
+.center-containervideo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: auto; /* No forced height */
+  height: auto; /* Ensures it only takes necessary space */
+  padding: 20px 0;
+}
+
+/* Responsive Video */
+.responsive-video {
+  max-width: 90%;
+  height: auto;
+  max-height: 500px;
+  border-radius: 10px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .center-container {
+    padding: 10px 0; /* Reduces vertical spacing */
+  }
+
+  .responsive-video {
+    max-width: 100%;
+    max-height: 300px;
+  }
+}
+
+/*mainvideo*/
+
+/* Left Alignment */
+.left {
+  text-align: left;
+  font-weight: 400;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .mare {
+    font-size: 4rem; /* Slightly smaller font */
+  }
+}
+
+@media (max-width: 768px) {
+  .mare {
+    font-size: 3rem;
+  }
+
+  .neonText,
+  .neonGold {
+    text-shadow:
+      0 0 3px #fff,
+      0 0 6px #f09,
+      0 0 12px rgba(255, 0, 153, 0.5); /* Reduce glow intensity */
+  }
+
+  .noulcentru {
+    margin-left: 0; /* Center text on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .mare {
+    font-size: 2rem;
+  }
+
+  .neonText,
+  .neonGold {
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #f09,
+      0 0 8px rgba(255, 0, 153, 0.3); /* Subtle glow for clarity */
+  }
+
+  .noulcentru {
+    margin-left: 0;
+  }
+
+  .header {
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+
+/*Header*/
+
+/*navbar*/
+/* Navbar Styles */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures left and center links are spaced properly */
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: transparent;
+}
+
+/* Left Link (Background Music) */
+.left-link {
+  flex: 0 0 auto; /* Prevents shrinking */
+  margin-right: auto; /* Pushes the BackgroundMusic component to the left */
+}
+
+/* Center Links */
+nav .center-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex: 1; /* Takes up available space */
+}
+
+/* Navbar Links */
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: 2px solid #f09;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #f09, #370260);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: color 0.3s, background 0.3s;
+}
+
+nav a:hover {
+  background: #f09;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-link {
+    margin: 10px 0;
+  }
+
+  .center-links {
+    flex-direction: column; /* Stack links on smaller screens */
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .center-links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+
+/*navbar*/
+/* ======================= */
+/* 🔹 Slider Container 🔹 */
+/* ======================= */
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* Align to the top instead of center */
+  width: 100%;
+  min-height: 180px; /* Further reduced height to make it closer */
+  padding: 5px 0;  /* Less padding for even closer positioning */
+}
+
+/* ======================= */
+/* 🔹 Slider CSS 🔹 */
+/* ======================= */
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 380px; /* Slightly reduced height */
+  overflow: hidden;
+  background-color: transparent;
+}
+
+/* ======================= */
+/* 🖼️ Image Styling 🖼️ */
+/* ======================= */
+.slider img {
+  position: absolute;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0.5;
+  width: 300px;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Active Slide */
+.slider img.center {
+  transform: scale(1.2);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Left & Right */
+.slider img.left, .slider img.right {
+  transform: scale(0.9);
+  z-index: 1;
+  filter: blur(2px);
+}
+
+.slider img.left {
+  left: 15%;
+}
+
+.slider img.right {
+  right: 15%;
+}
+
+/* Hide other images */
+.slider img.hidden {
+  transform: scale(0.7);
+  opacity: 0;
+  z-index: 0;
+}
+
+/* ======================= */
+/* ⬅️➡️ Navigation Buttons */
+/* ======================= */
+.prev-button, .next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 5;
+  transition: background 0.3s;
+}
+
+.prev-button:hover, .next-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-button {
+  left: 5%;
+}
+
+.next-button {
+  right: 5%;
+}
+
+/* ======================= */
+/* 🖼️ Modal Styling 🖼️ */
+/* ======================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 80vw;
+  max-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+
+/* ======================= */
+/* 📱 Responsive Fixes 📱 */
+/* ======================= */
+@media (max-width: 768px) {
+  .slider {
+    height: 270px;  /* Further reduced height for smaller screens */
+  }
+
+  .slider-container {
+    min-height: 120px; /* Reduced height to bring it much closer */
+    padding: 2px 0;  /* Less padding for even closer positioning */
+  }
+
+  .slider img {
+    width: 250px;
+  }
+
+  .slider img.center {
+    transform: scale(1);
+  }
+
+  .slider img.left, .slider img.right {
+    transform: scale(0.8);
+  }
+
+  .prev-button, .next-button {
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 230px;  /* Reduced height for smaller screens */
+  }
+
+  .slider-container {
+    min-height: 100px; /* Further reduced height to bring it even closer */
+    padding: 0;  /* No padding for closest positioning */
+  }
+
+  .slider img {
+    width: 200px;
+  }
+
+  .slider img.center {
+    transform: scale(1);
+  }
+
+  .slider img.left, .slider img.right {
+    transform: scale(0.7);
+  }
+
+  .prev-button, .next-button {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+}
+
+/*slider*/
+
+
+/*About*/
+/* About Section */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Added to give some space between image and text */
+  padding: 50px;
+  gap: 30px;
+  background-color: transparent;
+}
+
+.about img {
+  width: 40%;
+  height: auto;
+  border: 5px solid #6a0dad;
+  box-shadow: 0 0 10px #6a0dad;
+}
+
+.about div {
+  color: #ffffff;
+  width: 50%;
+}
+
+.about h2 {
+  color: #6a0dad;
+  font-size: 2.5rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;  /* Stack the image and text vertically on smaller screens */
+    align-items: center;  /* Center them vertically */
+    padding: 20px;
+  }
+
+  .about img {
+    width: 70%;  /* Make the image larger on smaller screens */
+    margin-bottom: 10px;  /* Reduced space between image and text (half the original) */
+  }
+
+  .about div {
+    width: 80%;  /* Allow text block to take up more space */
+    text-align: center;  /* Center the text */
+  }
+
+  .about h2 {
+    font-size: 2rem;  /* Make the heading slightly smaller on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 10px;
+  }
+
+  .about img {
+    width: 90%;  /* Image takes almost full width on very small screens */
+    margin-bottom: 5px;  /* Even smaller space between image and text */
+  }
+
+  .about h2 {
+    font-size: 1.8rem;  /* Slightly smaller heading for very small screens */
+  }
+}
+
+
+
+/*About*/
+
+/*gallery*/
+
+/* Gallery Section */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 5px solid #6a0dad;
+  box-shadow: 0 0 10px #6a0dad;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ffff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .gallery img {
+    width: 45%;  /* Images take up less width on tablets */
+    height: auto;  /* Maintain aspect ratio */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery img {
+    width: 90%;  /* Images take up almost full width on small screens */
+    height: auto;  /* Maintain aspect ratio */
+  }
+}
+
+/*gallery*/
+
+/*footer*/
+
+/* Footer Styling */
+footer {
+  background-color: transparent;
+  text-align: center;
+  padding: 10px 0;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #000000;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #4f4f4f;
+}
+
+/* Contact Buttons */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows the buttons to wrap on smaller screens */
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ffd700; /* WhatsApp Green */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #bda100; /* WhatsApp Darker Green */
+}
+
+.contact-button svg {
+  margin-right: 8px;
+  fill: white; /* Icon color */
+}
+
+/* Email Button (Custom Color) */
+.contact-button:nth-child(1) {
+  background-color: #6a0dad; /* Email Blue */
+}
+
+.contact-button:nth-child(1):hover {
+  background-color: #38025f; /* Darker Blue */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact-buttons {
+    flex-direction: column; /* Stack buttons vertically on medium screens */
+    gap: 15px; /* Adjust the space between stacked buttons */
+  }
+
+  .contact-button {
+    width: 80%; /* Make the buttons take up most of the screen width on mobile */
+    justify-content: center; /* Align the text in the middle */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-button {
+    width: 90%; /* Make the buttons even larger on smaller screens */
+  }
+}
+
+/*footer*/
+
+
+/*About*/
+
+/*Music player*/
+.music-player {
+  position: static;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: left;
+  background: linear-gradient(90deg, #f09, #370260);
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.music-button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.music-button:hover {
+  transform: scale(1.1);
+}
+
+.volume-slider {
+  margin: 0 10px;
+  width: 80px;
+  cursor: pointer;
+  accent-color: white;
+}
+
+/*Music player*/
+
