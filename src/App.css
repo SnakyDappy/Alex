@@ -491,8 +491,8 @@ nav a:hover {
 .about img {
   width: 40%;
   height: auto;
-  border: 5px solid #6a0dad;
-  box-shadow: 0 0 10px #6a0dad;
+  /* border: 5px solid #f09;
+  box-shadow: 0 0 10px #f09; */
 }
 
 .about div {
@@ -501,7 +501,7 @@ nav a:hover {
 }
 
 .about h2 {
-  color: #6a0dad;
+  color: #ffd700;
   font-size: 2.5rem;
 }
 
@@ -561,8 +561,8 @@ nav a:hover {
   width: 300px;
   height: 300px;
   object-fit: cover;
-  border: 5px solid #6a0dad;
-  box-shadow: 0 0 10px #6a0dad;
+  border: 5px solid #f09;
+  box-shadow: 0 0 10px #f09;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -646,7 +646,7 @@ footer a:hover {
 
 /* Email Button (Custom Color) */
 .contact-button:nth-child(1) {
-  background-color: #6a0dad; /* Email Blue */
+  background-color: #f09; /* Email Blue */
 }
 
 .contact-button:nth-child(1):hover {
@@ -711,3 +711,51 @@ footer a:hover {
 
 /*Music player*/
 
+/*rewiews*/
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 20px;
+}
+
+.review-card {
+  background: #333;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  text-align: center;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.review-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.review-name {
+  font-weight: bold;
+}
+
+.review-rating {
+  margin-bottom: 5px;
+}
+
+.star {
+  color: gold;
+}
+
+.review-text {
+  font-size: 14px;
+}
+/*rewiews*/

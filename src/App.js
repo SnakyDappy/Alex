@@ -5,8 +5,9 @@ import Poza from './components/Poza.js';
 import Navbar from './components/Navbar';
 import Slider from './components/Slider';
 import About from './components/About';
-import Gallery from './components/Gallery';
+import ReviewsSection from './components/ReviewsSection';
 import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Poza />
       <Slider />
       <About />
-      <Gallery />
+      <ReviewsSection />
       <Footer />
     </div>
   );
