@@ -71,7 +71,7 @@ const ReviewsSection = () => {
   };
 
   return (
-    <div className="reviews-container">
+    <div className="reviews-container" id="rewiews">
       {/* Desktop: Grid Layout */}
       <div className="reviews-grid">
         {reviews.map((review) => (
@@ -81,9 +81,10 @@ const ReviewsSection = () => {
 
       {/* Mobile: Swipeable Slider */}
       <div
-        className="reviews-slider"
+        className="reviews-slider" 
         onTouchStart={(e) => setTouchStart(e.changedTouches[0].clientX)}
         onTouchEnd={handleSwipe}
+        id="rewiews"
       >
         <ReviewCard {...reviews[currentIndex]} />
       </div>
