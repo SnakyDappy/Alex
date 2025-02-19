@@ -680,7 +680,6 @@ nav a:hover {
 /*gallery*/
 
 /*footer*/
-
 /* Footer Styling */
 footer {
   background-color: transparent;
@@ -704,15 +703,16 @@ footer a:hover {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap; /* Allows the buttons to wrap on smaller screens */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
+/* Contact Button Default Styling (PC Version Stays the Same) */
 .contact-button {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #fff;
-  background-color: #ffd700; 
+  background-color: #ffd700;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
@@ -720,39 +720,45 @@ footer a:hover {
 }
 
 .contact-button:hover {
-  background-color: #bda100; 
+  background-color: #bda100;
 }
 
 .contact-button svg {
   margin-right: 8px;
-  fill: white; /* Icon color */
+  fill: white;
 }
 
-/* Email Button (Custom Color) */
+/* Email Button Custom Color */
 .contact-button:nth-child(1) {
-  background-color: #f09; /* Email Blue */
+  background-color: #f09;
 }
 
 .contact-button:nth-child(1):hover {
-  background-color: rgba(255, 0, 153, 0.4); /* Darker Blue */
+  background-color: rgba(255, 0, 153, 0.7);
 }
 
-/* Mobile Responsiveness */
+/* ✅ Mobile Fixes Only */
 @media (max-width: 768px) {
   .contact-buttons {
-    flex-direction: column; /* Stack buttons vertically on medium screens */
-    gap: 15px; /* Adjust the space between stacked buttons */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Ensures buttons stay centered */
   }
 
   .contact-button {
-    width: 80%; /* Make the buttons take up most of the screen width on mobile */
-    justify-content: center; /* Align the text in the middle */
+    width: auto; /* Prevent full-width buttons */
+    min-width: 150px; /* Ensures they are not too small */
+    max-width: 220px; /* Prevent oversized buttons */
+    font-size: 14px;
+    padding: 8px 12px;
   }
 }
 
 @media (max-width: 480px) {
   .contact-button {
-    width: 90%; /* Make the buttons even larger on smaller screens */
+    min-width: 130px;
+    max-width: 200px;
+    font-size: 13px;
+    padding: 7px 10px;
   }
 }
 

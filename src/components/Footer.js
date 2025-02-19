@@ -13,7 +13,7 @@ function Footer() {
     </a>
 
 
-      <p>&copy; 2024 Shot shot events | A snaky project</p>
+      <p>&copy; 2025 Shot shot events | A snaky project</p>
 
 
 
