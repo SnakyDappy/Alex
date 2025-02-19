@@ -1,26 +1,88 @@
 
 
-body {
+/* Reset default margins and paddings to avoid unwanted spacing */
+* {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-size: 100% auto;
-  background-image: url("./photos/caramiziedit.jpg");
-  overflow-x: hidden;
-  position: relative;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.background {
-  background-color: transparent;
+/* Ensure body covers the entire viewport and fixes any overflow issues */
+body {
+  background: url('./photos/caramiziedit.jpg') no-repeat center center fixed;
+  background-size: cover; /* Ensures full coverage without stretching */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  font-family: Arial, sans-serif;
+  color: #fff; /* Adjust text color based on your design */
 }
 
-
-body::before {
-  top: 10%;  /* Adjust the top position for the first line */
+/* Wrapper to center content while keeping the background full */
+.container {
+  max-width: 1200px; /* Adjust width to match your design */
+  margin: 0 auto; /* Centers the content */
+  padding: 20px; /* Adds some spacing */
 }
 
-body::after {
-  top: 30%;  /* Adjust the top position for the second line */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      max-width: 90%;
+      padding: 10px;
+  }
 }
+
+/* Ensure navigation is aligned properly */
+nav {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav a {
+  color: #ffd700; /* Gold */
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+/* Adjusting buttons and links */
+a {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Video section with correct centering */
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.video-wrapper video {
+  max-width: 80%; /* Keeps video within reasonable bounds */
+  border-radius: 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .video-wrapper video {
+      max-width: 100%;
+  }
+}
+
+/* Fix for any potential background slide issue */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Double protection */
+}
+
 
 /*Header*/
 /* Container for SVG and text */
