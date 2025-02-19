@@ -60,14 +60,35 @@ body::after {
   will-change: transform; /* Prevents layout recalculations */
 }
 
+.neonTextSoft {
+  color: #fff;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 3px #f09,
+    0 0 5px #f09,
+    0 0 8px rgba(255, 0, 153, 0.4); /* Softer glow */
+  will-change: transform;
+}
+
+
 .neonGold {
   color: #fff;
   text-shadow:
-    0 0 5px #fff,
-    0 0 10px #ffd700,
-    0 0 20px #ffd700,
-    0 0 40px rgba(255, 215, 0, 0.5); /* Reduced large glow */
+    0 0 1px #fff,
+    0 0 3px #ffd700,
+    0 0 5px rgba(255, 215, 0, 0.5), /* Very soft glow */
+    0 0 8px rgba(255, 215, 0, 0.15); /* Almost invisible outer glow */
   will-change: transform;
+}
+
+
+
+.gradient {
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #f09, rgba(255, 0, 153, 0.5));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* Responsive styles for smaller screens */
@@ -317,7 +338,7 @@ nav a:hover {
   position: absolute;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   opacity: 0.5;
-  width: 300px;
+  width: 325px;  /* Slightly bigger than previous 300px */
   height: auto;
   max-height: 100%;
   object-fit: cover;
@@ -326,14 +347,14 @@ nav a:hover {
 
 /* Active Slide */
 .slider img.center {
-  transform: scale(1.2);
+  transform: scale(1.25);  /* Midway scaling between 1.2 and 1.3 */
   opacity: 1;
   z-index: 2;
 }
 
 /* Left & Right */
 .slider img.left, .slider img.right {
-  transform: scale(0.9);
+  transform: scale(0.95);  /* Slightly bigger than before */
   z-index: 1;
   filter: blur(2px);
 }
@@ -429,15 +450,15 @@ nav a:hover {
   }
 
   .slider img {
-    width: 250px;
+    width: 330px;  /* Increased width for images */
   }
 
   .slider img.center {
-    transform: scale(1);
+    transform: scale(1.15);  /* Midway scaling between 1.1 and 1.2 */
   }
 
   .slider img.left, .slider img.right {
-    transform: scale(0.8);
+    transform: scale(1);  /* Slightly increased scale for side images */
   }
 
   .prev-button, .next-button {
@@ -457,15 +478,15 @@ nav a:hover {
   }
 
   .slider img {
-    width: 200px;
+    width: 250px;  /* Increased width for images */
   }
 
   .slider img.center {
-    transform: scale(1);
+    transform: scale(1.1);  /* Slightly increased active image scaling */
   }
 
   .slider img.left, .slider img.right {
-    transform: scale(0.7);
+    transform: scale(0.95);  /* Slightly bigger side images */
   }
 
   .prev-button, .next-button {
@@ -501,9 +522,10 @@ nav a:hover {
 }
 
 .about h2 {
-  color: #ffd700;
   font-size: 2.5rem;
 }
+
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -713,13 +735,22 @@ footer a:hover {
 
 /*rewiews*/
 .reviews-container {
+  padding: 20px;
+}
+
+.reviews-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  padding: 20px;
+  padding: 0;
 }
 
+.reviews-slider {
+  display: none;  /* Hide the slider by default */
+}
+
+/* Review Card Styling */
 .review-card {
   background: #333;
   padding: 15px;
@@ -729,6 +760,7 @@ footer a:hover {
   text-align: center;
 }
 
+/* Review Header */
 .review-header {
   display: flex;
   align-items: center;
@@ -747,6 +779,7 @@ footer a:hover {
   font-weight: bold;
 }
 
+/* Rating Stars */
 .review-rating {
   margin-bottom: 5px;
 }
@@ -755,7 +788,45 @@ footer a:hover {
   color: gold;
 }
 
+/* Review Text with Gradient */
 .review-text {
-  font-size: 14px;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #f09, rgba(255, 0, 153, 0.5));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
-/*rewiews*/
+
+/* Mobile Styling - Reviews as Slider */
+@media (max-width: 768px) {
+  .reviews-grid {
+    display: none;  /* Hide grid layout on mobile */
+  }
+
+  .reviews-slider {
+    display: flex;  /* Display slider on mobile */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .reviews-slider .review-card {
+    flex-shrink: 0;
+    width: 80%; /* Width of each card in the slider */
+    margin: 0 10px; /* Margin between cards */
+    max-width: 300px;
+  }
+}
+
+/* Desktop Styling - Reviews as Grid */
+@media (min-width: 769px) {
+  .reviews-slider {
+    display: none;  /* Hide the slider on desktop */
+  }
+
+  .reviews-grid {
+    display: flex;  /* Display grid layout on desktop */
+  }
+}

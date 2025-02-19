@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const reviews = [
   {
@@ -56,11 +56,37 @@ const ReviewCard = ({ name, photo, rating, text }) => {
 };
 
 const ReviewsSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0); // Define touchStart state
+
+  const handleSwipe = (e) => {
+    const touchEnd = e.changedTouches[0].clientX;
+
+    if (touchStart - touchEnd > 50) {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    }
+    if (touchEnd - touchStart > 50) {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
+    }
+  };
+
   return (
     <div className="reviews-container">
-      {reviews.map((review) => (
-        <ReviewCard key={review.id} {...review} />
-      ))}
+      {/* Desktop: Grid Layout */}
+      <div className="reviews-grid">
+        {reviews.map((review) => (
+          <ReviewCard key={review.id} {...review} />
+        ))}
+      </div>
+
+      {/* Mobile: Swipeable Slider */}
+      <div
+        className="reviews-slider"
+        onTouchStart={(e) => setTouchStart(e.changedTouches[0].clientX)}
+        onTouchEnd={handleSwipe}
+      >
+        <ReviewCard {...reviews[currentIndex]} />
+      </div>
     </div>
   );
 };

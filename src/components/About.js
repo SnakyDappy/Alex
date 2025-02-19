@@ -1,5 +1,5 @@
 import React from 'react';
-import Photo1 from '../photos/photo (3).jpeg';
+import Photo1 from '../photos/photo (1).jpeg';
 
 function About() {
   return (
@@ -7,7 +7,7 @@ function About() {
       <img src={Photo1} alt="Am fost obligat sa fac descrierea asta"/>
       <div>
         <h2 className='neonGold'>Despre Noi:</h2>
-        <p>ceva ceva ceva</p>
+        <p className='gradient'>ceva ceva ceva</p>
       </div>
     </section>
   );
