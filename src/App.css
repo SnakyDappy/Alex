@@ -374,8 +374,8 @@ nav a:hover {
   justify-content: center;
   align-items: flex-start;  /* Align to the top instead of center */
   width: 100%;
-  min-height: 180px; /* Further reduced height to make it closer */
-  padding: 5px 0;  /* Less padding for even closer positioning */
+  min-height: 180px;
+  padding: 5px 0;
 }
 
 /* ======================= */
@@ -388,7 +388,7 @@ nav a:hover {
   align-items: center;
   width: 100%;
   max-width: 100%;
-  height: 380px; /* Slightly reduced height */
+  height: 380px;
   overflow: hidden;
   background-color: transparent;
 }
@@ -400,11 +400,19 @@ nav a:hover {
   position: absolute;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   opacity: 0.5;
-  width: 325px;  /* Slightly bigger than previous 300px */
+  width: 325px;  /* Default width */
   height: auto;
   max-height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Default styling for regular images */
   cursor: pointer;
+}
+
+/* 🔹 Special Handling for Vertical Images 🔹 */
+.slider img.vertical {
+  width: auto;  /* Auto width to keep aspect ratio */
+  height: 380px; /* Match slider height */
+  max-width: 90%; /* Prevent it from being too large */
+  object-fit: contain; /* Ensures full image is visible */
 }
 
 /* Active Slide */
@@ -416,7 +424,7 @@ nav a:hover {
 
 /* Left & Right */
 .slider img.left, .slider img.right {
-  transform: scale(0.95);  /* Slightly bigger than before */
+  transform: scale(0.95);  /* Slightly smaller */
   z-index: 1;
   filter: blur(2px);
 }
@@ -507,25 +515,17 @@ nav a:hover {
   }
 
   .slider-container {
-    min-height: 120px; /* Reduced height to bring it much closer */
+    min-height: 120px; /* Reduced height for smaller screens */
     padding: 2px 0;  /* Less padding for even closer positioning */
   }
 
   .slider img {
-    width: 330px;  /* Increased width for images */
+    width: 280px;  /* Slightly reduced width */
   }
 
-  .slider img.center {
-    transform: scale(1.15);  /* Midway scaling between 1.1 and 1.2 */
-  }
-
-  .slider img.left, .slider img.right {
-    transform: scale(1);  /* Slightly increased scale for side images */
-  }
-
-  .prev-button, .next-button {
-    font-size: 20px;
-    padding: 8px 12px;
+  .slider img.vertical {
+    width: auto;
+    height: 320px;  /* Reduce height for better mobile fit */
   }
 }
 
@@ -535,25 +535,17 @@ nav a:hover {
   }
 
   .slider-container {
-    min-height: 100px; /* Further reduced height to bring it even closer */
+    min-height: 100px; /* Further reduced height for smaller screens */
     padding: 0;  /* No padding for closest positioning */
   }
 
   .slider img {
-    width: 250px;  /* Increased width for images */
+    width: 230px;  /* More compact for small screens */
   }
 
-  .slider img.center {
-    transform: scale(1.1);  /* Slightly increased active image scaling */
-  }
-
-  .slider img.left, .slider img.right {
-    transform: scale(0.95);  /* Slightly bigger side images */
-  }
-
-  .prev-button, .next-button {
-    font-size: 18px;
-    padding: 5px 10px;
+  .slider img.vertical {
+    width: auto;
+    height: 280px; /* Further reduced height for small screens */
   }
 }
 
