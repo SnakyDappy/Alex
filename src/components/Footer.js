@@ -12,6 +12,7 @@ function Footer() {
         <a
           href="https://mail.google.com/mail/?view=cm&fs=1&to=namcartela@gmail.com"
           className="contact-button"
+          rel="noreferrer"
         >
           <FontAwesomeIcon icon={faEnvelope} /> Email
         </a>
@@ -19,6 +20,7 @@ function Footer() {
         <a
           href="https://wa.me/07namcartela"
           className="contact-button"
+          rel="noreferrer"
         >
           <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
         </a>
@@ -30,16 +32,16 @@ function Footer() {
 
       {/* Social Media Icons */}
       <div className="social-icons">
-        <a href="http://" target="_blank" className="social-icon">
+        <a href="http://" target="_blank" className="social-icon" rel="noreferrer">
           <FontAwesomeIcon icon={faFacebookSquare} />
         </a>
-        <a href="http://" target="_blank" className="social-icon">
+        <a href="http://" target="_blank" className="social-icon" rel="noreferrer">
           <FontAwesomeIcon icon={faInstagram} />
         </a>
-        <a href="http://" target="_blank" className="social-icon">
+        <a href="http://" target="_blank" className="social-icon" rel="noreferrer">
           <FontAwesomeIcon icon={faTiktok} />
         </a>
-        <a href="http://" target="_blank" className="social-icon">
+        <a href="http://" target="_blank" className="social-icon" rel="noreferrer">
           <FontAwesomeIcon icon={faYoutube} />
         </a>
       </div>
