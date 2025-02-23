@@ -38,7 +38,7 @@ function Footer() {
         <a href="http://" target="_blank" className="social-icon" rel="noreferrer">
           <FontAwesomeIcon icon={faInstagram} />
         </a>
-        <a href="http://" target="_blank" className="social-icon" rel="noreferrer">
+        <a href="https://" target="www.tiktok.com/@shotbyshotevents?_t=ZN-8uA6ox2TTx0&_r=1" className="social-icon" rel="noreferrer">
           <FontAwesomeIcon icon={faTiktok} />
         </a>
         <a href="http://" target="_blank" className="social-icon" rel="noreferrer">
