@@ -933,3 +933,80 @@ footer a:hover {
     display: flex;  /* Display grid layout on desktop */
   }
 }
+
+
+/* Styles for the video player section */
+/* Container for the video thumbnails */
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds space between the thumbnails */
+  justify-content: center; /* Centers the thumbnails horizontally */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Individual video thumbnail styling */
+.video-thumbnail {
+  width: 250px; /* Smaller width for the video thumbnail on PC */
+  position: relative;
+  cursor: pointer; /* Show the hand cursor when hovering over the video */
+  overflow: hidden; /* Hides any overflow content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a slight shadow to the thumbnails */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Video element within the thumbnail */
+.video-thumbnail video {
+  width: 100%; /* Makes the video fill the width of the container */
+  height: auto; /* Adjusts the height to maintain the video’s aspect ratio */
+  display: block; /* Ensures no space below the video */
+}
+
+/* Hover effect when the user hovers over the thumbnail */
+.video-thumbnail:hover {
+  transform: scale(1.05); /* Slightly enlarges the thumbnail */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increases the shadow on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .video-thumbnail {
+    width: 100%; /* Make the thumbnails full-width on smaller screens */
+    max-width: 400px; /* Limit the max width for better layout */
+  }
+}
+
+/* View More Button */
+/* View More Button */
+.view-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.view-more {
+  background: linear-gradient(145deg, #f09, rgba(255, 0, 153, 0.5)); /* Gradient with #f09 and rgba(255, 0, 153, 0.5) */
+  color: #fff; /* White text for better contrast */
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.view-more:hover {
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.view-more:focus {
+  outline: none; /* Removes outline on focus */
+}
+
+
+/* Event Video Links Section */

@@ -7,6 +7,7 @@ import Slider from './components/Slider';
 import About from './components/About';
 import ReviewsSection from './components/ReviewsSection';
 import Footer from './components/Footer';
+import Videos from './components/VideoGallery.js';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Poza />
       <Slider />
       <About />
+      <Videos />
       <ReviewsSection />
       <Footer />
     </div>
